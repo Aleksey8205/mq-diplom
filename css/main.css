@@ -221,6 +221,10 @@ body {
   margin-top: 63px;
 }
 
+.content {
+  width: 65%;
+}
+
 .post-list {
   box-sizing: border-box;
   display: flex;
@@ -242,8 +246,8 @@ body {
 
 .image {
   width: 381px;
+  height: 294px;
   margin-right: 31px;
-
 }
 
 .post-text {
@@ -255,6 +259,7 @@ body {
 .list {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
   padding-bottom: 5px;
   margin: 0;
@@ -358,7 +363,6 @@ body {
 }
 
 .new-post {
-  width: 272px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -432,6 +436,10 @@ body {
   margin-bottom: 18px;
 }
 
+.post-bar {
+  width: 279px
+}
+
 .thumb {
   width: 71px;
 
@@ -488,7 +496,12 @@ body {
   height: 47px;
   font-size: 13px;
   border: none;
+  outline: none;
   background-color: #f4f7f6;
+}
+
+.search-field:focus-visible {
+  border: 1px solid #b59f5b;
 }
 
 .subscribe {
@@ -682,7 +695,12 @@ body {
   height: 48px;
   font-size: 13px;
   border: none;
+  outline: none;
   background-color: #f4f7f6;
+}
+
+.mailing-field:focus-visible {
+  border: 1px solid #b59f5b;
 }
 
 .tag {
@@ -711,6 +729,10 @@ body {
   border: 3px solid #f4f3f1;
   padding: 4px 11px;
 }
+
+.item-link-tag:hover {
+  border: 3px solid #b59f5b;
+} 
 
 .list-tags-item {
   margin-top: 10px;
@@ -778,6 +800,7 @@ body {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+  gap: 50px;
   padding-left: 23px;
   padding-right: 23px;
 }
@@ -796,6 +819,10 @@ body {
   outline: 2px solid #b59f5b;
   outline-offset: 21px;
   min-height: 220px;
+}
+
+.image-shop {
+  width: 100%;
 }
 
 .shop-text {
@@ -920,7 +947,6 @@ body {
   }
 
   .container {
-    max-width: 768px;
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -935,7 +961,7 @@ body {
 
   .title-caption {
     margin-top: 85px;
-    width: 630px;
+    width: 52.5%;
   }
 
   .header-title {
@@ -950,6 +976,7 @@ body {
 
   .trend-wrapper {
     margin-top: 20px;
+    justify-content: space-between;
   }
 
   .trend-item {
@@ -1004,7 +1031,7 @@ body {
   }
 
   .shop-item {
-    width: 44%;
+    width: 40%;
   }
 }
 
@@ -1017,21 +1044,16 @@ body {
     margin-top: 28px;
 }
 
-  .trend-item {
-    width: 25%;
-    min-height: 245px;
-    padding-right: 10px;
-  }
 }
 
 @media (min-width: 641px) and (max-width: 960px) {
   .side-bar {
-    visibility: hidden;
+    display: none;
     position: absolute;
   }
 
   .menu-checkbox:checked~.side-bar {
-    visibility: visible;
+    display: flex;
     position: absolute;
     right: 60px;
     flex-wrap: wrap;
@@ -1043,6 +1065,17 @@ body {
     right: 35px;
   }
 
+  .post-list {
+    flex-direction: column;
+  }
+
+  .content {
+    width: 50%;
+  }
+
+  .image {
+    margin-right: 0;
+  }
 
   .menu-icon {
     display: inline-block;
@@ -1071,6 +1104,15 @@ body {
   .menu-icon::after {
     transform: translateY(-16px);
   }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .post-bar {
+    width: 30%;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -1099,7 +1141,6 @@ body {
   }
 
   .container {
-    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -1126,12 +1167,10 @@ body {
     padding: 25px 0 28px 15px;
   }
 
-  .post-list {
-    flex-direction: column;
-  }
 
   .image {
-    width: 329px;
+    width: 300px;
+    max-height: 329px;
     margin-right: 0;
   }
 
@@ -1140,14 +1179,23 @@ body {
     flex-direction: column;
   }
 
+  .post-list {
+    flex-direction: column;
+  }
+
+
   .heading-post {
     font-size: 16px;
     line-height: 20px;
   }
 
+  .content {
+    width: 100%;
+  }
+
   .post-text {
     margin-top: 15px;
-    width: 330px;
+    width: 100%;
   }
 
   .author {
@@ -1167,7 +1215,16 @@ body {
   }
 
   .side-bar {
-    visibility: hidden;
+    display: none;
+    position: absolute;
+  }
+
+  .menu-checkbox:checked~.side-bar {
+    display: flex;
+    position: absolute;
+    right: 60px;
+    flex-wrap: wrap;
+    width: 60%;
   }
 
 
@@ -1220,6 +1277,19 @@ body {
     width: 100%;
     height: 3px;
     background: #eeeeee;
+  }
+  
+  .image-shop {
+    width: auto;
+  }
+
+  .post-bar {
+    width: 100%;
+  }
+
+  .title-caption {
+    width: 100%;
+    justify-items: center;
   }
 }
 
